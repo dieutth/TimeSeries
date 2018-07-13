@@ -12,7 +12,7 @@ class TimeSeriesTest extends FunSuite{
 
   private def generateSourceFromText(text: String): Iterator[(Long, Double)] = {
     val arr =
-      text.split("\r\n")
+      text.split("\n")
       .map{
         line =>
           val splitted = line.split(" ")
@@ -44,7 +44,7 @@ class TimeSeriesTest extends FunSuite{
       OutputRecord(1355271562, 1.80275, 2, 3.6054, 1.80265, 1.80275),
       OutputRecord(1355271588, 1.80295, 2, 3.6057, 1.80275, 1.80295)
     )
-    val filepath = "\\data_scala.txt"
+    val filepath = "/data_scala.txt"
     val fileLines = Source.fromInputStream(getClass.getResourceAsStream(filepath)).getLines()
     val inputSource: Iterator[(Long, Double)] = fileLines.flatMap{
       line =>
