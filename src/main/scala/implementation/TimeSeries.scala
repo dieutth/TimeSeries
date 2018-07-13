@@ -59,8 +59,9 @@ class TimeSeries(windowSize: Int){
   }
 
   /**
-    * Produce stats of all current valid events in the buffer.
-    * An invalid event might stay in the buffer if the number of
+    * Produce stats of all valid events in the buffer.
+    * A valid event is an event that belong to the rolling window of the latest
+    * event in the buffer (ie.the event at index end-1, cyclicly)
     * @return
     */
   private def produceStats: OutputRecord = {
