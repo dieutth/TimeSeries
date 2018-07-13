@@ -3,4 +3,5 @@
 .idea/*
 target/*
 out/*
-
+project/target/*
+project/plugins.sbt
